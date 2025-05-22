@@ -1,0 +1,174 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head><title>View Cards</title></head>
+<body>
+    <h1>Stored Cards</h1>
+    <table border="1">
+        <tr><th>User</th><th>Smart Card</th><th>PAN</th><th>Aadhar</th><th>Mixed</th></tr>
+        {% for c in cards %}
+        <tr>
+            <td>{{ c.user }}</td>
+            <td>{{ c.smart_card }}</td>
+            <td>{{ c.pan_card }}</td>
+            <td>{{ c.aadhar_card }}</td>
+            <td>{{ c.mixed_card }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body> -->
+   <!DOCTYPE html>
+<html>
+<head>
+    <title>Your Uploaded Documents</title>
+    <style>
+        .div{display: flex;
+
+        }
+        body{
+            text-align: center;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Uploaded Documents</h1>
+
+    {% for card in cards %}
+        <h2>User: {{ card.user }}</h2>
+
+        <!-- Smart Card -->
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+            <h3>Smart Card</h3>
+            {% if card.smart_card %}
+                {% set filename = card.smart_card.split('/')[-1] %}
+                <img src="card_2_1 (1).png"
+                     width="300" alt="Smart Card"><br>
+                <a href="{{ url_for('uploaded_file', username=card.user, filename=filename) }}" target="_blank">
+                    View Smart Card
+                </a>
+            {% else %}
+                <p>Smart Card: Not uploaded.</p>
+            {% endif %}
+        </div>
+
+        <!-- PAN Card -->
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+            <h3>PAN Card</h3>
+            {% if card.pan_card %}
+                {% set filename = card.pan_card.split('/')[-1] %}
+                {% if filename.endswith('.pdf') %}
+                    <!-- <embed src="{{ url_for('uploaded_file', username=card.user, filename=filename) }}"
+                           width="400" height="500" type="application/pdf"> -->
+                <!-- {% else %} -->
+                    <img src="Pen-Card-696x392.png.webp"
+                         width="300" alt="PAN Card">
+                <!-- {% endif %} -->
+                <br>
+                <a href="{{ url_for('uploaded_file', username=card.user, filename=filename) }}" target="_blank">
+                    View PAN Card
+                </a>
+            {% else %}
+                <p>PAN Card: Not uploaded.</p>
+            {% endif %}
+        </div>
+
+        <!-- Aadhar Card -->
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+            <h3>Aadhar Card</h3>
+            {% if card.aadhar_card %}
+                {% set filename = card.aadhar_card.split('/')[-1] %}
+                {% if filename.endswith('.pdf') %}
+                    <!-- <embed src="{{ url_for('uploaded_file', username=card.user, filename=filename) }}"
+                           width="400" height="500" type="application/pdf">
+                {% else %} -->
+                    <img src="113290969.webp"
+                         width="300" alt="Aadhar Card">
+                <!-- {% endif %} -->
+                <br>
+                <a href="{{ url_for('uploaded_file', username=card.user, filename=filename) }}" target="_blank">
+                    View Aadhar Card
+                </a>
+            {% else %}
+                <p>Aadhar Card: Not uploaded.</p>
+            {% endif %}
+        </div>
+
+        <!-- License -->
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 40px;" >
+            <h3>License</h3>
+            <img src="Driving-Licence-500x500.jpg"
+                         width="300" alt="License">
+            {% if card.license_card %}
+                {% set filename = card.license_card.split('/')[-1] %}
+                {% if filename.endswith('.pdf') %}
+                    <!-- <embed src="{{ url_for('uploaded_file', username=card.user, filename=filename) }}"
+                           width="400" height="500" type="application/pdf">
+                {% else %} -->
+                    <!-- <img src="Driving-Licence-500x500.jpg"
+                         width="300" alt="License"> -->
+                <!-- {% endif %} -->
+                <br>
+                <a href="{{ url_for('uploaded_file', username=card.user, filename=filename) }}" target="_blank">
+                    View License
+                </a>
+            {% else %}
+                <p>License: Not uploaded.</p>
+            {% endif %}
+        </div>
+
+    {% endfor %}
+</body>
+</html>
