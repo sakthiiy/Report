@@ -1,0 +1,87 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head><title>View Cards</title></head>
+<body>
+    <h1>Stored Cards</h1>
+    <table border="1">
+        <tr><th>User</th><th>Smart Card</th><th>PAN</th><th>Aadhar</th><th>Mixed</th></tr>
+        {% for c in cards %}
+        <tr>
+            <td>{{ c.user }}</td>
+            <td>{{ c.smart_card }}</td>
+            <td>{{ c.pan_card }}</td>
+            <td>{{ c.aadhar_card }}</td>
+            <td>{{ c.mixed_card }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stored Cards</h1>
+    <table>
+        <tr><th>User</th><th>Smart Card</th><th>PAN</th><th>Aadhar</th><th>license</th><th>Mixed</th></tr>
+        {% for c in cards %}
+        <tr>
+            <td>{{ c.user }}</td>
+            <td>{{ c.smart_card }}</td>
+            <td>{{ c.pan_card }}</td>
+            <td>{{ c.aadhar_card }}</td>
+            <td>{{ c.license }}</td>
+            <td>{{ c.mixed_card }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
