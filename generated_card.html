@@ -1,0 +1,66 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head><title>Generated Card</title></head>
+<body>
+    <h1>Your Mixed Card Number</h1>
+    <p><strong>{{ mixed_card_number }}</strong></p>
+    <a href="{{ url_for('view_cards') }}">View All Cards</a>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            color: #16a085;
+            background: #e0f7fa;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #1c6ea4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Mixed Card Number</h1>
+    <p><strong>{{ mixed_card_number }}</strong></p>
+    <a href="{{ url_for('view_own_card') }}">View Cards</a>
+</body>
+</html>
