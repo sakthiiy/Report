@@ -1,0 +1,107 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head><title>Generate Card</title></head>
+<body>
+    <h1>Generate Card Number</h1>
+    <form method="POST" action="{{ url_for('generate_card') }}">
+        Smart Card Number: <input type="text" name="smart_card" required><br><br>
+        PAN Card Number: <input type="text" name="pan_card" required><br><br>
+        Aadhar Card Number: <input type="text" name="aadhar_card" required><br><br>
+        <button type="submit">Generate</button>
+    </form>
+    <br><a href="{{ url_for('view_cards') }}">View All Cards</a>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+           
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1e8449;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1c5d99;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="POST" action="{{ url_for('generate_card') }}" enctype="multipart/form-data">
+    <label>Smart Card:</label>
+    <input type="file" name="smart_card" accept=".jpg,.jpeg,.png,.pdf" required><br><br>
+
+    <label>PAN Card:</label>
+    <input type="file" name="pan_card" accept=".jpg,.jpeg,.png,.pdf" required><br><br>
+
+    <label>Aadhar Card:</label>
+    <input type="file" name="aadhar_card" accept=".jpg,.jpeg,.png,.pdf" required><br><br>
+
+    <label>License:</label>
+    <input type="file" name="license_card" accept=".jpg,.jpeg,.png,.pdf" required><br><br>
+
+    <button type="submit">Upload Card</button>
+</form> 
+
+</body>
+</html>
