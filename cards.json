@@ -1,0 +1,89 @@
+[
+    {
+        "user": "user1",
+        "smart_card": "12345",
+        "pan_card": "122334455656",
+        "aadhar_card": "12345",
+        "mixed_card": "1234565612341223"
+    },
+    {
+        "user": "user1",
+        "smart_card": "12345",
+        "pan_card": "122334455656",
+        "aadhar_card": "87654e",
+        "mixed_card": "1234565687651223"
+    },
+    {
+        "user": "user1",
+        "smart_card": "7864763478",
+        "pan_card": "8478347",
+        "aadhar_card": "2384y2378",
+        "mixed_card": "7864834723848478"
+    },
+    {
+        "user": "user2",
+        "smart_card": "345",
+        "pan_card": "567",
+        "aadhar_card": "456",
+        "mixed_card": "345567456567"
+    },
+    {
+        "user": "user1",
+        "smart_card": "12312",
+        "pan_card": "123123",
+        "aadhar_card": "23123",
+        "mixed_card": "1231312323121231"
+    },
+    {
+        "user": "user1",
+        "smart_card": "7864763478",
+        "pan_card": "",
+        "aadhar_card": "134234",
+        "mixed_card": "78641342"
+    },
+    {
+        "user": "user1",
+        "smart_card": "234234",
+        "pan_card": "22423",
+        "aadhar_card": "34234234",
+        "mixed_card": "2342242334232242"
+    },
+    {
+        "user": "user1",
+        "smart_card": "2223",
+        "pan_card": "2342342",
+        "aadhar_card": "2323",
+        "license": "23423e23",
+        "mixed_card": "22232342232323423"
+    },
+    {
+        "user": "sivabalan",
+        "smart_card": "334444",
+        "pan_card": "24232323",
+        "aadhar_card": "322323232",
+        "license": "213423423",
+        "mixed_card": "33442323322324232"
+    },
+    {
+        "user": "Sakthiyy",
+        "smart_card": "8122777451",
+        "pan_card": "848920748909090",
+        "aadhar_card": "090909090909",
+        "license": "8848493939",
+        "mixed_card": "81229090090984894"
+    },
+    {
+        "user": "mughil123",
+        "smart_card": "uploads/mughil123/mughil123_smart.png",
+        "pan_card": "uploads/mughil123/mughil123_pan.jpg",
+        "aadhar_card": "uploads/mughil123/mughil123_aadhar.jpg",
+        "license_card": "uploads/mughil123/mughil123_license.jpg"
+    },
+    {
+        "user": "user32",
+        "smart_card": "uploads/user32/user32_smart.jpg",
+        "pan_card": "uploads/user32/user32_pan.jpg",
+        "aadhar_card": "uploads/user32/user32_aadhar.jpg",
+        "license_card": "uploads/user32/user32_license.jpg"
+    }
+]
