@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e0f7fa;
+    }
+    .form-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 500px;
+    }
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #video{
+      padding-left: 90px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+            background-color: #004d40;
+            
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register</h2>
+    <form method="POST">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" oninput="this.value=this.value.toLowerCase()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      
+      <video id="video" width="320" height="240" autoplay></video><br>
+      <button type="button" onclick="capture()">Capture Photo</button><br><br>
+
+      <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+      <input type="hidden" name="face_image" id="face_image">
+      <br>
+      <button type="submit">Register</button>
+    </form>
+   
+    <script>
+      // Access webcam
+      const video = document.getElementById('video');
+      navigator.mediaDevices.getUserMedia({ video: true })
+          .then(stream => { video.srcObject = stream; })
+          .catch(err => console.error("Camera access error:", err));
+
+      function capture() {
+          const canvas = document.getElementById('canvas');
+          const context = canvas.getContext('2d');
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+          const dataURL = canvas.toDataURL('image/jpeg');
+          document.getElementById('face_image').value = dataURL;
+
+          document.getElementById('preview').src = dataURL;
+          document.getElementById('preview').style.display = "block";
+      }
+  </script>
+    </script>
+  </div>
+</body>
+</html>
